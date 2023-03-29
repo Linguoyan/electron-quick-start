@@ -1,0 +1,54 @@
+{
+    "name": "electron-quick-start",
+    "version": "1.0.0",
+    "description": "A minimal Electron application",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder"
+    },
+    "repository": "https://github.com/electron/electron-quick-start",
+    "keywords": [
+        "Electron",
+        "quick",
+        "start",
+        "tutorial",
+        "demo"
+    ],
+    "author": "GitHub",
+    "license": "CC0-1.0",
+    "devDependencies": {
+        "electron": "^23.2.0",
+        "electron-builder": "^23.6.0"
+    },
+    "build": {
+        "productName": "electron-quick-start",
+        "appId": "com.pc.electron",
+        "directories": {
+            "output": "releases"
+        },
+        "win": {
+            "icon": "builder/icon.ico",
+            "target": [
+                {
+                    "target": "default",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ]
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowElevation": true,
+            "allowToChangeInstallationDirectory": true,
+            "installerIcon": "./builder/icon.ico",
+            "uninstallerIcon": "./builder/icon.ico",
+            "installerHeaderIcon": "./builder/icon.ico",
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true,
+            "shortcutName": "electron-builder-start",
+            "include": "builder/installer.nsh"
+        }
+    }
+}
